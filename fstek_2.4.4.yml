@@ -1,14 +1,7 @@
 - name: 2.4 Configuring Linux Kernel protection mechanisms
   hosts: all
-#  become: true
-#  remote_user: fstec 
+  become: no
   tasks:
-    - name: 2.4.4 Checking the value of the slab_nomerge option
-      blockinfile:
-        path: /etc/default/grub
-        block: |
-          # Added by Ansible to enable slab_nomerge
-          GRUB_CMDLINE_LINUX="slab_nomerge"
-        insertafter: EOF
-      changed_when: false
+    - name: Ping my Servers
+      ping:
 

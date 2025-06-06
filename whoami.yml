@@ -1,0 +1,7 @@
+- name: Test my connection
+  hosts: all
+  become: true
+  remote_user: elmed_ave
+  tasks:
+    - name: Who am I
+      command: whoami
